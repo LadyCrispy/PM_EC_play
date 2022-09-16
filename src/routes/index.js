@@ -1,7 +1,7 @@
 var router = require('express').Router();
 
 router.get('/', function(req, res, next) {
-  res.status(200).send('hi!! :D')
+  res.status(200).send({msg: 'Wellcome :) '})
 });
 router.use('/carts', require('./carts'))
 router.use('/products', require('./products'))

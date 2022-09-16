@@ -16,12 +16,4 @@ router.post('/buy', isAuth, function (req, res) {
   controller.buy(req, res, req.body);
 });
 
-// router.put('/updateById', isAuth, function (req, res) {
-//   controller.updateById(req, res);
-// });
-
-// router.delete('/empty', isAuth, function (req, res) {
-//   controller.deleteById(req, res);
-// });
-
 module.exports = router;

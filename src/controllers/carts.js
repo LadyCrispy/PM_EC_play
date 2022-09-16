@@ -26,7 +26,7 @@ class CartsController extends BaseController {
             })
             const cart = {
                 user: CartModel.objectId(req.user._id),
-                items: processedItems
+                items: processedItems,
             }
 
             await CartModel.create(req, cart);
@@ -88,7 +88,7 @@ class CartsController extends BaseController {
             await CartModel.delete(req, { _id: cart._id });
             res.status(200).send({ msg: 'Order succesfully paid.' })
         } catch (err) {
-            res.status(500).send({ msg: err.msg })
+            res.status(500).send({ msg: err.message })
         }
 
     }

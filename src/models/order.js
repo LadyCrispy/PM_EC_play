@@ -20,7 +20,6 @@ class OrderModel extends BaseModel {
                 }],
                 customer: {
                     type: mongoose.Schema.Types.ObjectId,
-                    unique: true,
                     required: true
                 },
                 paymentId: {

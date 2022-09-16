@@ -36,18 +36,7 @@ class UserModel extends BaseModel {
                 password: {
                     type: String,
                     required: [true, "can't be blank"],
-                },
-                addresses: [
-                    {
-                        street: String,
-                        city: String,
-                        number: String,
-                        phone: {
-                            prefix: String,
-                            number: String,
-                        }
-                    }
-                ],
+                }
             }
         )
 

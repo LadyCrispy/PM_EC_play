@@ -10,7 +10,6 @@ class Payment {
     }
 
     async pay() {
-        console.log('hola')
         try {
             await this.pGateway[this.payCollection].pay
             return { success: true, _id: mongoose.Types.ObjectId() }
