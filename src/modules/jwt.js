@@ -1,6 +1,13 @@
 const jwt = require('jsonwebtoken');
 const secret = process.env.SECRET;
 
+/**
+ * 
+ * @param {Object} user 
+ * @param {string} user._id 
+ * @param {string} user.username 
+ * @returns 
+ */
 const generateJWT = (user) => {
     const now = new Date();
     const expire = new Date(now);

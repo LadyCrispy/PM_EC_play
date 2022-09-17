@@ -6,7 +6,11 @@ class ProductModel extends BaseModel {
             'Product',
             'products',
             {
-                name: String,
+                name: { 
+                    type: String,
+                    unique: true,
+                    required: [true, "can't be blank"]
+                },
                 price: Number,
                 currency: {
                     type: String,

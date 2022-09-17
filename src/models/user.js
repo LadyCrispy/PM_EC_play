@@ -44,6 +44,17 @@ class UserModel extends BaseModel {
         this.salt = bcrypt.genSaltSync(rounds);
     }
 
+    /**
+     * 
+     * @param {*} req 
+     * @param {Object} user 
+     * @param {string} user.name
+     * @param {string} user.surname
+     * @param {string} user.username
+     * @param {string} user.email
+     * @param {string} user.password
+     * @returns 
+     */
     async create(req, user) {
         user.password = bcrypt.hashSync(user.password, this.salt);
         const registeredUser = await this.model.create(user);

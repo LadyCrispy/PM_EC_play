@@ -1,3 +1,13 @@
+## Run project:
+
+To install project dependencies run command: 
+    
+    npm i
+    
+To run project execute command: 
+
+    npm start
+
 ## Models:
     -Base:
         for shared methods as find, create, createMany, update, delete string to Mongo object id
@@ -95,7 +105,7 @@
                 }
             }
 
-        Put '/updateById':
+        Put '/deleteById':
             !token required
             delete product by _id
 
@@ -105,7 +115,6 @@
 
     /users
         Post '/register':
-            !token required
             register an user
 
             body: {
@@ -116,9 +125,8 @@
                 "password": ""
             }
         
-        Post '/register':
-            !token required
-            login
+        Post '/login':
+            login to retrieve token
 
             body: {
                 "username": "",

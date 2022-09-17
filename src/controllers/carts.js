@@ -9,6 +9,13 @@ class CartsController extends BaseController {
         super(CartModel)
     }
 
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {Object} body 
+     * @returns 
+     */
     async create(req, res, body) {
         const items = body.items;
         if (!items) {
@@ -36,6 +43,13 @@ class CartsController extends BaseController {
         }
     }
 
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {Object} body 
+     * @returns 
+     */
     async buy(req, res, body) {
         const { cartId, paymentMethod } = body;
         try {
@@ -73,7 +87,7 @@ class CartsController extends BaseController {
 
             const payment = await gateway.pay(paymentInfo);
             if (!payment.success) {
-                res.status(500).send({msg: 'Something went wrong, please try again in a few minutes'});
+                res.status(500).send({ msg: 'Something went wrong, please try again in a few minutes' });
             }
             const order = {
                 items: cart.items,

@@ -8,6 +8,14 @@ class UsersController extends BaseController {
         super(UserModel)
     }
 
+    /**
+     * 
+     * @param {*} req 
+     * @param {*} res 
+     * @param {string} username 
+     * @param {string} pwd 
+     * @returns
+     */
     async login(req, res, username, pwd) {
         try {
             const user = await this.controller.model.findOne({ username });
